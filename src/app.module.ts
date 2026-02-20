@@ -1,17 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ProductsModule } from './products/products.module';
-
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ProductModule } from './presentation/product/product.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true, // makes ConfigService available everywhere
+      isGlobal: true,
     }),
 
-   TypeOrmModule.forRootAsync({
+    TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         type: 'mysql',
@@ -21,12 +19,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         password: config.get<string>('DB_PASS'),
         database: config.get<string>('DB_NAME'),
         autoLoadEntities: true,
-        synchronize: true,
+        synchronize: true, // dev only
       }),
     }),
-    ProductsModule,
+
+    ProductModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

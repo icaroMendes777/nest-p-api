@@ -1,11 +1,11 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity('products')
-export class Product {
+export class ProductOrmEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 120 })
+  @Column()
   name: string;
 
   @Column('decimal', { precision: 10, scale: 2 })
@@ -14,5 +14,3 @@ export class Product {
   @Column({ nullable: true })
   description?: string;
 }
-
-
