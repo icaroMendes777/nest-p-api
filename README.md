@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>NestJS Product API</title>
-</head>
-<body>
 
   <h1>NestJS Product API</h1>
 
@@ -61,5 +54,4 @@ DB_NAME=nest_test
     <li>Database enforces foreign key constraints.</li>
   </ol>
 
-</body>
-</html>
+
