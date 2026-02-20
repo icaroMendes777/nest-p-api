@@ -27,11 +27,6 @@
     <li>TypeORM</li>
   </ul>
 
-  <p><strong>Foreign key relationship:</strong></p>
-  <pre>products.category_id → categories.id</pre>
-
-  <p><strong>Category name is unique</strong></p>
-
   <h2>Setup</h2>
 
   <h3>1. Install dependencies</h3>
