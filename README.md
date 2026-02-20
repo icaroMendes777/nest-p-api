@@ -18,7 +18,6 @@
     <li>Get Product by ID</li>
     <li>Automatic Category creation if it does not exist</li>
     <li>Products reference Categories via foreign key</li>
-    <li>Separation between domain entities and ORM entities</li>
   </ul>
 
   <h2>Database</h2>
