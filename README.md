@@ -2,7 +2,7 @@
   <h1>NestJS Product API</h1>
 
   <p>
-    A simple REST API built with NestJS using Clean Architecture principles and TypeORM.
+    A simple REST API built with NestJS and TypeORM, using Clean Architecture principles and unit tests.
   </p>
 
   <h2>Features</h2>
