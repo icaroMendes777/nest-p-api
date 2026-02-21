@@ -42,7 +42,7 @@ DB_NAME=nest_test
 
   <p>The application has Unit tests built around main aplication functions. To test the application run:</p>
   
-  <pre>npm run start:dev</pre>
+  <pre>npm run test</pre>
 
   <h2>Example Flow</h2>
 
