@@ -9,8 +9,7 @@
   <ul>
     <li>Create Product</li>
     <li>Get Product by ID</li>
-    <li>Automatic Category creation if it does not exist</li>
-    <li>Products reference Categories via foreign key</li>
+    <li>Creates new Product Category if it does not already exist</li>
   </ul>
 
   <h2>Database</h2>
@@ -38,6 +37,13 @@ DB_NAME=nest_test
   <h3>3. Run the application</h3>
   <pre>npm run start:dev</pre>
 
+
+  <h3>4. Testing</h3>
+
+  <p>The application has Unit tests built around main aplication functions. To test the application run:</p>
+  
+  <pre>npm run start:dev</pre>
+
   <h2>Example Flow</h2>
 
   <p>When creating a product:</p>
@@ -53,5 +59,7 @@ DB_NAME=nest_test
     <li>Repositories persist entities.</li>
     <li>Database enforces foreign key constraints.</li>
   </ol>
+
+
 
 
