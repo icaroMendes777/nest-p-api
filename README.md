@@ -44,6 +44,10 @@ DB_NAME=nest_test
   
   <pre>npm run test</pre>
 
+  <h2>Api Documentation</h2>
+
+  Access /api to access api documentation.
+
   <h2>Example Flow</h2>
 
   <p>When creating a product:</p>
