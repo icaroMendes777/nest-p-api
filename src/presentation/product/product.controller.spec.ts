@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ProductController } from './product.controller';
 import { CreateProductUseCase } from '../../application/product/create-product.usecase';
 import { GetProductsUseCase } from '../../application/product/get-products.usecase';
+import toResponseDto from './product.mapper';
 
 describe('ProductController', () => {
   let controller: ProductController;
@@ -41,7 +42,7 @@ describe('ProductController', () => {
 
     expect(mockCreateProductUseCase.execute).toHaveBeenCalledTimes(1);
     expect(mockCreateProductUseCase.execute).toHaveBeenCalledWith(body);
-    expect(result).toEqual(expectedResult);
+    expect(result).toEqual(toResponseDto(expectedResult));
   });
 
   it('should call GetProductsUseCase.execute and return result', async () => {

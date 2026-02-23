@@ -3,6 +3,7 @@ import { ProductRepository } from '../../domain/product/product.repository';
 import { Product } from '../../domain/product/product.entity';
 import { Category } from 'src/domain/category/category.entity';
 import { CategoryRepository } from 'src/domain/category/category.repository';
+import { CreateProductDto } from 'src/presentation/product/dto/create-product.dto';
 
 @Injectable()
 export class CreateProductUseCase {
@@ -17,11 +18,9 @@ export class CreateProductUseCase {
   }) {
 
     let category = await this.categoryRepo.findByName(data.categoryName);
-    console.log('found category: ', category)
 
 
     if (!category) {
-      console.log('data ',data)
       category = await this.categoryRepo.create(new Category(null, data.categoryName));
     }
 
@@ -32,8 +31,6 @@ export class CreateProductUseCase {
       category.id,
       data.description,
     );
-
-    console.log('sending to create prod: ', product)
 
     return this.productRepo.create(product);
   }
