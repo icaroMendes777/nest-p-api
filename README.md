@@ -46,7 +46,7 @@ DB_NAME=nest_test
 
   <h2>Api Documentation</h2>
 
-  Access /api to access api documentation.
+  Access /api to access swagger documentation.
 
   <h2>Example Flow</h2>
 
