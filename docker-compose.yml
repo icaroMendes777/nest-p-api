@@ -1,0 +1,35 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: nest_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_ROOT_PASSWORD}'
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+    ports:
+      - "${FORWARD_DB_PORT:-3306}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test:
+          - CMD
+          - mysqladmin
+          - ping
+          - '-p${DB_PASSWORD}'
+      interval: 5s
+      retries: 20
+      timeout: 5s
+
+  api:
+    build: .
+    container_name: nest_api
+    env_file:
+      - .env
+    ports:
+      - "${FORWARD_APP_PORT:-3000}:3000"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:

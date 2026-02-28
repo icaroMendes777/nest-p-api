@@ -7,23 +7,30 @@ import { ProductModule } from './presentation/product/product.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: '.env',
     }),
 
+
     TypeOrmModule.forRootAsync({
-      inject: [ConfigService],
-      useFactory: (config: ConfigService) => ({
-        type: 'mysql',
-        host: config.get<string>('DB_HOST'),
-        port: config.get<number>('DB_PORT'),
-        username: config.get<string>('DB_USER'),
-        password: config.get<string>('DB_PASS'),
-        database: config.get<string>('DB_NAME'),
-        autoLoadEntities: true,
-        synchronize: true, // dev only
-      }),
+      useFactory: async () => {
+
+        return {
+          type: 'mysql',
+          host: process.env.DB_HOST,
+          port: parseInt(process.env.DB_PORT ?? '3306'),
+          username: process.env.DB_USERNAME,
+          password: process.env.DB_PASSWORD,
+          database: process.env.DB_DATABASE,
+          autoLoadEntities: true,
+          synchronize: true,
+
+          retryAttempts: 200,
+          retryDelay: 3000,
+        };
+      },
     }),
 
     ProductModule,
   ],
 })
-export class AppModule {}
+export class AppModule { }

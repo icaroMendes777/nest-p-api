@@ -2,7 +2,7 @@
   <h1>NestJS Product API</h1>
 
   <p>
-    A simple REST API built with NestJS and TypeORM, using Clean Architecture principles and unit tests.
+    A simple REST API built with NestJS and TypeORM, using Docker, Clean Architecture and unit tests. 
   </p>
 
   <h2>Features</h2>
@@ -35,8 +35,10 @@ DB_NAME=nest_test
   </pre>
 
   <h3>3. Run the application</h3>
-  <pre>npm run start:dev</pre>
 
+  <p>Be sure to have Docker installed, then start container:</p>
+
+  <pre>docker compose up</pre>
 
   <h3>4. Testing</h3>
 
