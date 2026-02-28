@@ -44,7 +44,7 @@ DB_NAME=nest_test
 
   <p>The application has Unit tests built around main aplication functions. To test the application run:</p>
   
-  <pre>npm run test</pre>
+  <pre>docker exec -it nest_api npm run test</pre>
 
   <h2>Api Documentation</h2>
 

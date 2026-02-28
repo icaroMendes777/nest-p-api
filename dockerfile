@@ -9,15 +9,15 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# ---------- Production stage ----------
+# ---------- Local Only ----------
 FROM node:20-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install --only=production
+RUN npm install
 
-COPY --from=builder /app/dist ./dist
+COPY . .
 
 EXPOSE 3000
 
