@@ -7,9 +7,9 @@
 
   <h2>Features</h2>
   <ul>
-    <li>Create Product</li>
-    <li>Get Product by ID</li>
-    <li>Creates new Product Category if it does not already exist</li>
+    <li>Create/Get Store</li>
+    <li>Create/Get Product</li>
+    <li>Creates new Category from product creation</li>
   </ul>
 
   <h2>Database</h2>
@@ -46,11 +46,14 @@ DB_NAME=nest_test
   
   <pre>docker exec -it nest_api npm run test</pre>
 
-  <h2>Api Documentation</h2>
-
-  Access /api to access swagger documentation.
 
   <h2>Example Flow</h2>
+
+  <p>When creating a store:</p>
+  <ol>
+    <li>The controller validates incoming request data.</li>
+    <li>Repositories persist entities.</li>
+  </ol>
 
   <p>When creating a product:</p>
   <ol>
@@ -65,6 +68,11 @@ DB_NAME=nest_test
     <li>Repositories persist entities.</li>
     <li>Database enforces foreign key constraints.</li>
   </ol>
+
+
+  <h2>Api Documentation</h2>
+
+  Access /api to access swagger documentation.
 
 
 
