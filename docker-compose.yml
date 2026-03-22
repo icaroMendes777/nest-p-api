@@ -31,7 +31,7 @@ services:
     depends_on:
       - mysql
     volumes:
-      - .:/app   # 👈 THIS is the key
+      - .:/app
       - /app/node_modules
 
 volumes:

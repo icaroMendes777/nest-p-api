@@ -40,7 +40,6 @@ export class ProductRepositoryImpl implements ProductRepository {
     }
 
     async create(product: Product): Promise<Product> {
-        console.log('creating product: ', product)
         const saved = await this.repository.save(this.toOrm(product));
         return this.toDomain(saved);
     }
