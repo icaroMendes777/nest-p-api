@@ -20,10 +20,7 @@
 
   <h2>Setup</h2>
 
-  <h3>1. Install dependencies</h3>
-  <pre>npm install</pre>
-
-  <h3>2. Configure environment variables</h3>
+  <h3>1. Configure environment variables</h3>
   <p>Create a <code>.env</code> file:</p>
 
   <pre>
@@ -34,13 +31,13 @@ DB_PASSWORD=yourpassword
 DB_NAME=nest_test
   </pre>
 
-  <h3>3. Run the application</h3>
+  <h3>2. Run the application</h3>
 
   <p>Be sure to have Docker installed, then start container:</p>
 
-  <pre>docker compose up</pre>
+  <pre>docker compose up --build</pre>
 
-  <h3>4. Testing</h3>
+  <h3>3. Testing</h3>
 
   <p>The application has Unit tests built around main aplication functions. To test the application run:</p>
   
