@@ -1,15 +1,3 @@
-# ---------- Build stage ----------
-FROM node:20-alpine AS builder
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
-COPY . .
-RUN npm run build
-
-# ---------- Local Only ----------
 FROM node:20-alpine
 
 WORKDIR /app
@@ -21,4 +9,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["node", "dist/main.js"]
+CMD ["npm", "run", "start:dev"]

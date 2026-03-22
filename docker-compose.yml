@@ -30,6 +30,9 @@ services:
       - "${FORWARD_APP_PORT:-3000}:3000"
     depends_on:
       - mysql
+    volumes:
+      - .:/app   # 👈 THIS is the key
+      - /app/node_modules
 
 volumes:
   mysql_data:
