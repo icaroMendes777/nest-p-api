@@ -21,15 +21,8 @@
   <h2>Setup</h2>
 
   <h3>1. Configure environment variables</h3>
-  <p>Create a <code>.env</code> file:</p>
 
-  <pre>
-DB_HOST=localhost
-DB_PORT=3306
-DB_USERNAME=root
-DB_PASSWORD=yourpassword
-DB_NAME=nest_test
-  </pre>
+  <p>Create a <code>.env</code> file based on .env.example</p>
 
   <h3>2. Run the application</h3>
 
